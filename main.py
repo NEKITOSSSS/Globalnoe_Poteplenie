@@ -5,7 +5,7 @@ import requests
 from model import get_class
 
 import os
-print(os.listdir('images'))
+
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -46,8 +46,9 @@ async def cool(ctx):
 
 
 @bot.command('fact')
-  response = random.choice(phrases)
-        await message.channel.send(response)
+async def python(ctx):
+    response = random.choice(facts)
+    await ctx.send(response)
 
 
 @bot.command('check')
@@ -61,6 +62,11 @@ async def check(ctx):
     else:
         await ctx.send(' вы забыли картинку')
 
+
+
+
+
+
 facts = [
     'Вода — источник жизни на земле и требует особого отношения. Старайтесь экономить воду при каждой возможности и не допускайте загрязнения воды бытовым стоком.',
     'Мусор является одной из основных причин загрязнения окружающей среды, как в городах, так и в сельской местности. Ежедневно выбрасывается большое количество мусора, как бытового, так и промышленного характера. Старайтесь всегда бросать мусор только в специальные урны и научите своих детей этому.',
@@ -70,4 +76,8 @@ facts = [
     
 
 
-bot.run("TOKEN")    
+bot.run("MTE1NDgwMjgxMTg4NDc5ODA3NA.GDb8kg.b_YP3Af-Yv_ROWhO-4mJj4FmbdhQA60aF5MUYg")    
+
+
+
+
