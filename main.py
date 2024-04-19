@@ -76,7 +76,7 @@ facts = [
     
 
 
-bot.run("MTE1NDgwMjgxMTg4NDc5ODA3NA.GDb8kg.b_YP3Af-Yv_ROWhO-4mJj4FmbdhQA60aF5MUYg")    
+bot.run("TOKEN")    
 
 
 
