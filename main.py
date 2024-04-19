@@ -2,7 +2,7 @@ import discord
 import random
 from discord.ext import commands
 import requests
-from model import get_class
+
 
 import os
 
@@ -51,17 +51,11 @@ async def python(ctx):
     await ctx.send(response)
 
 
-@bot.command('check')
-async def check(ctx):
-    if ctx.message.attachments:
-         for attachment in ctx.message.attachments:
-             file_name = attachment.filename
-             file_url = attachment.url
-             await attachment.save(f'Мы сохранили картинку: {file_name}')
-             await ctx.send(get_class(model_path="keras_model.h5", labels_path="labels.txt", image_path=f"images/{file_name}"))
-    else:
-        await ctx.send(' вы забыли картинку')
 
+@bot.command('util')
+async def python(ctx):
+    response = random.choice(utilization)
+    await ctx.send(response)
 
 
 
@@ -72,11 +66,19 @@ facts = [
     'Мусор является одной из основных причин загрязнения окружающей среды, как в городах, так и в сельской местности. Ежедневно выбрасывается большое количество мусора, как бытового, так и промышленного характера. Старайтесь всегда бросать мусор только в специальные урны и научите своих детей этому.',
     'Одним из основных загрязнителей природы считаются пластиковые бутылки и различные полиэтиленовые изделия и пакеты. Всем известно, что пластиковые изделия почти не разлагаются в природе и при сжигании образуют ядовитые вещества загрязняя воздух.',
     'Энергия является неотъемлемой частью нашей жизни и невозможно представить жизнь без современных приборов и гаджетов. Однако, если использовать энергосберегающие и энергоэффективные приборы, то это заметно уменьшит спрос на электроэнергию и снизит нагрузку на окружающую среду.'
+ 
+]
+    
+
+utilization = [
+    'Стелянные тары и пластик нельзя выбрасывать не в специализированные контейнеры. ',
+    'Сортируйте мусор! Отделяйте перерабатываемые отходы от неперерабатываемых',
+ 
 ]
     
 
 
-bot.run("TOKEN")    
+bot.run("")    
 
 
 
